@@ -34,7 +34,7 @@ def get_seconds(arg) -> List[int]:
     return [result, clock]
 
 
-def countdown(arg):
+def countdown(arg: str) -> None:
     li = get_seconds(arg)
     result = li[0]
     clock = li[1]

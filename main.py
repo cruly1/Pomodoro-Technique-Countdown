@@ -7,7 +7,7 @@ import re
 from counter import countdown
 
 
-def main():
+def main() -> None:
     sounds = ["-s", "-s2", "-s3"]
 
     if (len(sys.argv) == 1) or sys.argv[1] == "-h":

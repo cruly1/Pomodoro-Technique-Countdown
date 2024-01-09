@@ -1,7 +1,7 @@
 import os
 
 
-def display_help():
+def display_help() -> None:
     print("--- Pomodoro Countdown ---\n")
     print("Usage:\n")
     print("{:<20} {:>5}".format("-h", "Display Help"))
@@ -15,7 +15,7 @@ def display_help():
     print("{:>25} {:>20}".format("1h5m", "-> 1 hour 5 minutes"))
 
 
-def play_sound(arg):
+def play_sound(arg: str) -> None:
     li = [e for e in [*arg] if e.isnumeric()]
     if not li:
         times = 1
