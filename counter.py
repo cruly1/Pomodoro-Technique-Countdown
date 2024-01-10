@@ -2,7 +2,6 @@ import datetime
 import os
 import time
 
-from typing import List
 from utils import play_sound
 
 SECOND = 1
@@ -10,7 +9,10 @@ MINUTE = 60 * SECOND
 HOUR = 60 * MINUTE
 
 
-def get_seconds(arg) -> List[int]:
+def get_seconds(arg) -> int:
+    if arg.isnumeric():
+        return int(arg)
+
     result = 0
     clock = {}
 
@@ -31,13 +33,11 @@ def get_seconds(arg) -> List[int]:
         else:
             result += clock[time_unit] * SECOND
 
-    return [result, clock]
+    return result
 
 
 def countdown(arg: str) -> None:
-    li = get_seconds(arg)
-    result = li[0]
-    clock = li[1]
+    result = get_seconds(arg)
     tmp = result
 
     for i in range(result+1, 1, -1):
